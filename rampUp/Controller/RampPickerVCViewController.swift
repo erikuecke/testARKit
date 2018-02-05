@@ -43,7 +43,8 @@ class RampPickerVCViewController: UIViewController {
         
         preferredContentSize = size
         
-        
+        view.layer.borderColor = UIColor.white.cgColor
+        view.layer.borderWidth = 3.0
         
         let pipe = Ramp.getPipe()
         Ramp.startRotation(node: pipe)
@@ -67,6 +68,7 @@ class RampPickerVCViewController: UIViewController {
             let node = hitResults[0].node
             print(node.name!)
             rampPlacerVC.onRampSelected(rampName: node.name!)
+            dismiss(animated: true, completion: nil)
             
         }
     }
